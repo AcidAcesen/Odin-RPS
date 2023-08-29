@@ -1,8 +1,8 @@
 body{
-    background-color: aliceblue;
+    background-color: cornsilk;
 }
 header{
-    background-color: aqua;
+    background-color: lemonchiffon;
     text-align: center;
 }
 .container{
@@ -11,6 +11,10 @@ header{
 }
 .container .item{
     margin: 100px;
-    border-color: solid blue;
+    border-color: solid black;
     border-radius: 15px;
+}
+.container .item button{
+    border-color: solid black;
+    border-radius: 20px;
 }
