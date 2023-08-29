@@ -1,0 +1,16 @@
+body{
+    background-color: aliceblue;
+}
+header{
+    background-color: aqua;
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.container .item{
+    margin: 100px;
+    border-color: solid blue;
+    border-radius: 15px;
+}
