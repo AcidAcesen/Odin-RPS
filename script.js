@@ -1,43 +1,42 @@
-const player = document.querySelector("#player");
-const computer = document.querySelector("#computer");
-const result = document.querySelector("#result");
-const choice = document.querySelectorAll(".choice");
+const playerText = document.querySelector("#playerText");
+const computerText = document.querySelector("#computerText");
+const resultText = document.querySelector("#resultText");
+const choiceBtn = document.querySelectorAll(".choiceBtn");
+let player;
+let computer;
+let result;
 
-let playerChoice;
-let computerChoice;
-let resultChoice;
-
-choice.forEach(button => button.addEventListener("click", () => {
-
-    playerChoice = button.textContent;
+choiceBtn.forEach(button => button.addEventListener("click", () => {
+    player = button.textContent;
     computerTurn();
-    player.textContent = 'Player:   ${playerChoice}';
-    computer.textContent = 'Computer:   ${computerChoice}';
-    result.textContent = checkWinner();
-} ))
+     playerText.textContent = `Player: ${player}`;
+    computerText.textContent = `Computer: ${computer}`;
+    resultText.textContent =  checkWinner();
+}));
 
 function computerTurn(){
     const randNum = Math.floor(Math.random() * 3)
     switch(randNum){
         case 1:
-            computer = "rock";
+            computer = "ROCK";
             break;
         case 2:
-            computer = "paper";
+            computer = "PAPER";
             break;
         case 3:
-            computer = "scissor";
+            computer = "SCISSOR";
             break;
     }
 }
+
 function checkWinner(){
-    if(playerChoice==computerChoice){
+    if(player == computer){
         return "Draw!";
-    }else if(computerChoice=="rock"){
-        return (playerChoice == "paper") ? "You Win!" : "You Lose !"
-    }else if(computerChoice=="paper"){
-        return (playerChoice == "scissor") ? "You Win!" : "You Lose !"
-    }else if(computerChoice=="scissor"){
-        return (playerChoice == "rock") ? "You Win!" : "You Lose !"
+    }else if(computer == "ROCK"){
+        return (player == "PAPER") ? "You Win!" : "You Lose !"
+    }else if(computer=="PAPER"){
+        return (player == "SCISSOR") ? "You Win!" : "You Lose !"
+    }else if(computer =="SCISSOR"){
+        return (player == "ROCK") ? "You Win!" : "You Lose !"
     }
 }
